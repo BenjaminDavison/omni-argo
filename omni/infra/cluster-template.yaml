@@ -30,3 +30,5 @@ machineClass:
 patches:
   - name: longhorn-kernel-modules
     file: patches/longhorn-kernel-modules.yaml
+  - name: longhorn-rw
+    file: patches/longhorn-rw.yaml
