@@ -1,0 +1,34 @@
+kind: Cluster
+name: omni-contrib
+talos:
+  version: v1.10.5
+kubernetes:
+  version: 1.33.2
+features:
+  enableWorkloadProxy: true
+patches:
+  - name: cni
+    file: patches/cni.yaml
+  - name: system-extensions
+    file: patches/system-extensions.yaml
+---
+kind: ControlPlane
+machineClass:
+  name: omni-contrib-controlplane
+  size: 1
+patches:
+  - name: cilium
+    file: patches/cilium.yaml
+  - name: argocd
+    file: patches/argocd.yaml
+  - name: monitoring
+    file: patches/monitoring.yaml
+---
+kind: Workers
+name: workers
+machineClass:
+  name: omni-contrib-workers
+  size: unlimited
+patches:
+  - name: longhorn-kernel-modules
+    file: patches/longhorn-kernel-modules.yaml

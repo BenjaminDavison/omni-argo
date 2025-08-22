@@ -1,0 +1,43 @@
+# GCP Terraform files
+gcp/
+
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+.terraform.lock.hcl
+
+# Kubernetes secrets and sensitive files
+*.kubeconfig
+talosconfig
+*.pem
+*.key
+*.crt
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Executable files
+*.exe
