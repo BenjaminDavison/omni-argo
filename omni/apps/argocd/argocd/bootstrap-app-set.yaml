@@ -48,23 +48,3 @@ spec:
             maxDuration: 5m
       ignoreDifferences:
         # Cilium generated certs
-        - name: cilium-ca
-          kind: Secret
-          namespace: kube-system
-          jsonPointers:
-            - /data/ca.crt
-            - /data/ca.key
-        - name: hubble-server-certs
-          kind: Secret
-          namespace: kube-system
-          jsonPointers:
-            - /data/ca.crt
-            - /data/tls.crt
-            - /data/tls.key
-        - name: hubble-relay-client-certs
-          kind: Secret
-          namespace: kube-system
-          jsonPointers:
-            - /data/ca.crt
-            - /data/tls.crt
-            - /data/tls.key

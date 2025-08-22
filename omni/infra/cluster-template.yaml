@@ -6,17 +6,14 @@ kubernetes:
   version: 1.33.2
 features:
   enableWorkloadProxy: true
-patches:
-  - name: cni
-    file: patches/cni.yaml
+# patches:
+
 ---
 kind: ControlPlane
 machineClass:
   name: omni-contrib-controlplane
   size: 3
 patches:
-  - name: cilium
-    file: patches/cilium.yaml
   - name: argocd
     file: patches/argocd.yaml
   - name: monitoring
