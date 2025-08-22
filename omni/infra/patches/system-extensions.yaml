@@ -1,7 +1,4 @@
 machine:
-  sysctls:
-    customization:
-      systemExtensions:
-        officialExtensions:
-          - image: ghcr.io/siderolabs/iscsi-tools
-          - image: ghcr.io/siderolabs/util-linux-tools
+  extensions:
+    - image: ghcr.io/siderolabs/iscsi-tools
+    - image: ghcr.io/siderolabs/util-linux-tools

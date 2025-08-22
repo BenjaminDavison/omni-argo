@@ -9,8 +9,6 @@ features:
 patches:
   - name: cni
     file: patches/cni.yaml
-  - name: system-extensions
-    file: patches/system-extensions.yaml
 ---
 kind: ControlPlane
 machineClass:
