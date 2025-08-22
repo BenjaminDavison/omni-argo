@@ -22278,8 +22278,8 @@ cluster:
               generators:
               - list:
                   elements:
-                  - repoPath: examples/omni/apps/*/*
-                    repoURL: https://github.com/siderolabs/contrib.git
+                  - repoPath: omni/apps/*/*
+                    repoURL: https://github.com/BenjaminDavison/omni-argo.git
                     revision: HEAD
               - git:
                   directories:
