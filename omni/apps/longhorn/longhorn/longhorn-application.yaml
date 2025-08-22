@@ -7,6 +7,14 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+      - SkipDryRunOnMissingResource=true
+      - ServerSideApply=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 30s
+        factor: 2
+        maxDuration: 5m
   project: default
   sources:
     - chart: longhorn
@@ -29,3 +37,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
+  ignoreDifferences:
+    - group: longhorn.io
+      kind: BackupTarget
+      jsonPointers:
+        - /spec/backupTargetURL
