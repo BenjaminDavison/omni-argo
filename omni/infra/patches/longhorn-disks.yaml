@@ -8,3 +8,8 @@ machine:
           - bind
           - rshared
           - rw
+ 
+  disks:
+    - device: /dev/sdb # The name of the disk to use.
+      partitions:
+        - mountpoint: /var/lib/longhorn # Where to mount the partition.

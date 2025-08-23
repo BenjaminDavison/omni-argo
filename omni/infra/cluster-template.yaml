@@ -9,11 +9,9 @@ features:
 patches:
   - name: longhorn-kernel-modules
     file: patches/longhorn-kernel-modules.yaml
-  - name: longhorn-rw
-    file: patches/longhorn-rw.yaml
 systemExtensions:
   - siderolabs/iscsi-tools
-  - siderolabs/util-linux-tools    
+  - siderolabs/util-linux-tools        
 ---
 kind: ControlPlane
 machineClass:
@@ -26,8 +24,6 @@ patches:
     file: patches/monitoring.yaml
   - name: longhorn-kernel-modules
     file: patches/longhorn-kernel-modules.yaml
-  - name: longhorn-rw
-    file: patches/longhorn-rw.yaml
 ---
 kind: Workers
 name: workers
@@ -35,7 +31,7 @@ machineClass:
   name: omni-contrib-workers
   size: unlimited
 patches:
+  - name: longhorn-disks
+    file: patches/longhorn-disks.yaml
   - name: longhorn-kernel-modules
     file: patches/longhorn-kernel-modules.yaml
-  - name: longhorn-rw
-    file: patches/longhorn-rw.yaml    
