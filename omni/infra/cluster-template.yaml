@@ -6,8 +6,14 @@ kubernetes:
   version: 1.33.2
 features:
   enableWorkloadProxy: true
-# patches:
-
+patches:
+  - name: longhorn-kernel-modules
+    file: patches/longhorn-kernel-modules.yaml
+  - name: longhorn-rw
+    file: patches/longhorn-rw.yaml
+systemExtensions:
+  - siderolabs/iscsi-tools
+  - siderolabs/util-linux-tools    
 ---
 kind: ControlPlane
 machineClass:
@@ -18,6 +24,10 @@ patches:
     file: patches/argocd.yaml
   - name: monitoring
     file: patches/monitoring.yaml
+  - name: longhorn-kernel-modules
+    file: patches/longhorn-kernel-modules.yaml
+  - name: longhorn-rw
+    file: patches/longhorn-rw.yaml
 ---
 kind: Workers
 name: workers
@@ -28,4 +38,4 @@ patches:
   - name: longhorn-kernel-modules
     file: patches/longhorn-kernel-modules.yaml
   - name: longhorn-rw
-    file: patches/longhorn-rw.yaml
+    file: patches/longhorn-rw.yaml    
