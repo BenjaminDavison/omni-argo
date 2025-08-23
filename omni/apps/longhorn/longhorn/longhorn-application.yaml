@@ -30,7 +30,9 @@ spec:
                 omni-kube-service-exposer.sidero.dev/port: "50083"
                 omni-kube-service-exposer.sidero.dev/label: Longhorn
           defaultSettings:
-            defaultDataPath: /var/lib/longhorn
+            defaultDataPath: /var/mnt/storage
+            createDefaultDiskLabeledNodes: true
+            replicaAutoBalance: enabled
           persistence:
             defaultClass: true
             defaultClassReplicaCount: 1
