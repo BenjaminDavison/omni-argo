@@ -30,6 +30,7 @@ metallb:
   
   # Speaker configuration
   speaker:
+    ignoreExcludeLB: true ### Default is false  
     # Node selector for speaker pods
     nodeSelector: {}
     # Tolerations for speaker pods
@@ -40,13 +41,6 @@ metallb:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
-    # Security context for required capabilities
-    securityContext:
-      capabilities:
-        add:
-          - NET_ADMIN
-          - NET_RAW
-          - SYS_ADMIN
     # ServiceMonitor configuration
     serviceMonitor:
       enabled: false
@@ -64,13 +58,6 @@ metallb:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
-    # Security context for required capabilities
-    securityContext:
-      capabilities:
-        add:
-          - NET_ADMIN
-          - NET_RAW
-          - SYS_ADMIN
     # ServiceMonitor configuration
     serviceMonitor:
       enabled: false
