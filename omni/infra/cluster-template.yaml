@@ -7,6 +7,8 @@ kubernetes:
 features:
   enableWorkloadProxy: true
 patches:
+  - name: cni
+    file: patches/cni.yaml
   - name: longhorn-kernel-modules
     file: patches/longhorn-kernel-modules.yaml
 systemExtensions:
@@ -18,6 +20,8 @@ machineClass:
   name: omni-contrib-controlplane
   size: 3
 patches:
+  - name: cilium
+    file: patches/cilium.yaml
   - name: argocd
     file: patches/argocd.yaml
   - name: monitoring
