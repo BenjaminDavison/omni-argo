@@ -40,6 +40,10 @@ metallb:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
+    # ServiceMonitor configuration
+    serviceMonitor:
+      enabled: false
+      interval: 30
   
   # Controller configuration
   controller:
@@ -53,6 +57,10 @@ metallb:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
+    # ServiceMonitor configuration
+    serviceMonitor:
+      enabled: false
+      interval: 30
   
   # Prometheus monitoring
   prometheus:
