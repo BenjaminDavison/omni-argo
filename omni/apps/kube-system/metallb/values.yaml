@@ -58,6 +58,7 @@ metallb:
   prometheus:
     enabled: true
     serviceAccount: "metallb-prometheus"
+    namespace: "monitoring"
     serviceMonitor:
       enabled: true
       interval: 30
