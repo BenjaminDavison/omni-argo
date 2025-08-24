@@ -22299,7 +22299,6 @@ cluster:
               destination:
                 namespace: '{{ path[3] }}'
                 server: https://kubernetes.default.svc
-              ignoreDifferences: []
               project: default
               source:
                 path: '{{ path }}'

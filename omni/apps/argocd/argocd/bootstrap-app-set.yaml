@@ -46,5 +46,4 @@ spec:
             duration: 30s
             factor: 2
             maxDuration: 5m
-      ignoreDifferences:
-        # Cilium generated certs
+      # ignoreDifferences field removed as it was empty and causing validation errors
