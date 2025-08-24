@@ -46,4 +46,5 @@ spec:
             duration: 30s
             factor: 2
             maxDuration: 5m
-      ignoreDifferences: []
+      ignoreDifferences:
+        # Cilium generated certs
