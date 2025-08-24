@@ -57,6 +57,9 @@ metallb:
   # Prometheus monitoring
   prometheus:
     enabled: true
+    serviceAccount:
+      create: true
+      name: ""
     serviceMonitor:
       enabled: true
       interval: 30
