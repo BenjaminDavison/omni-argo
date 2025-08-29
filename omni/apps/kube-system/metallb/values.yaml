@@ -2,6 +2,9 @@ metallb:
   # Basic configuration for MetalLB
   # You can customize this based on your network requirements
   
+  # Ensure MetalLB uses the correct namespace
+  namespaceOverride: metallb
+  
   # Enable Layer 2 mode (default)
   # For BGP mode, you would configure bgpPeers and bgpCommunities
   layer2:
@@ -41,6 +44,13 @@ metallb:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
+    # Security context for speaker pods
+    securityContext:
+      capabilities:
+        add:
+          - NET_ADMIN
+          - NET_RAW
+          - SYS_ADMIN
     # ServiceMonitor configuration
     serviceMonitor:
       enabled: false
@@ -58,6 +68,12 @@ metallb:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
+    # Security context for controller pods
+    securityContext:
+      capabilities:
+        add:
+          - NET_ADMIN
+          - NET_RAW
     # ServiceMonitor configuration
     serviceMonitor:
       enabled: false
