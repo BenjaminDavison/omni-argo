@@ -41,13 +41,6 @@ metallb:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
-    # Security context for speaker pods
-    securityContext:
-      capabilities:
-        add:
-          - NET_ADMIN
-          - NET_RAW
-          - SYS_ADMIN
     # ServiceMonitor configuration
     serviceMonitor:
       enabled: false
@@ -65,12 +58,6 @@ metallb:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
-    # Security context for controller pods
-    securityContext:
-      capabilities:
-        add:
-          - NET_ADMIN
-          - NET_RAW
     # ServiceMonitor configuration
     serviceMonitor:
       enabled: false
