@@ -21441,6 +21441,13 @@ cluster:
                 name: redis
                 ports:
                 - containerPort: 6379
+                resources:
+                  limits:
+                    cpu: 500m
+                    memory: 512Mi
+                  requests:
+                    cpu: 250m
+                    memory: 256Mi
                 securityContext:
                   allowPrivilegeEscalation: false
                   capabilities:
@@ -21662,6 +21669,13 @@ cluster:
                     port: 8084
                   initialDelaySeconds: 5
                   periodSeconds: 10
+                resources:
+                  limits:
+                    cpu: 1000m
+                    memory: 1Gi
+                  requests:
+                    cpu: 500m
+                    memory: 512Mi
                 securityContext:
                   allowPrivilegeEscalation: false
                   capabilities:
@@ -22001,6 +22015,13 @@ cluster:
                     port: 8080
                   initialDelaySeconds: 3
                   periodSeconds: 30
+                resources:
+                  limits:
+                    cpu: 1000m
+                    memory: 1Gi
+                  requests:
+                    cpu: 500m
+                    memory: 512Mi
                 securityContext:
                   allowPrivilegeEscalation: false
                   capabilities:
@@ -22240,6 +22261,13 @@ cluster:
                     port: 8082
                   initialDelaySeconds: 5
                   periodSeconds: 10
+                resources:
+                  limits:
+                    cpu: 1500m
+                    memory: 2Gi
+                  requests:
+                    cpu: 500m
+                    memory: 1Gi
                 securityContext:
                   allowPrivilegeEscalation: false
                   capabilities:
