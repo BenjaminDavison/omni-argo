@@ -2,9 +2,6 @@ metallb:
   # Basic configuration for MetalLB
   # You can customize this based on your network requirements
   
-  # Ensure MetalLB uses the correct namespace
-  namespaceOverride: metallb
-  
   # Enable Layer 2 mode (default)
   # For BGP mode, you would configure bgpPeers and bgpCommunities
   layer2:
